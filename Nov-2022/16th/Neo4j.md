@@ -14,8 +14,7 @@ relationshipProperties: 'cost'
 )`  
 A Graph Projection is created first, with the type of source and destination nodes specified, and the type of vertex required.  
 The vertex property to be used is indicated. Essentially keeps a subset of the entire graph for using next.  
-The reason why this graph projection is created because the implementation is *homogeneous*, it cannot distinguish between different types of  
-nodes and vertices.  
+The reason why this graph projection is created because the implementation is *homogeneous*, it cannot distinguish between different types of nodes and vertices.  
 
 `MATCH (source:Loc {name: 'A'}), (target:Loc {name: 'F'})  
 CALL gds.shortestPath.dijkstra.stream('myGraph2', {  
