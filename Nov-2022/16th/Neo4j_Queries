@@ -1,0 +1,151 @@
+1) MATCH (source:Loc {name: 'A'}), (target:Loc {name: 'F'})
+   CALL gds.shortestPath.dijkstra.stream('myGraph2', {
+   sourceNode: source,
+   targetNode: target,
+   relationshipWeightProperty: 'cost'
+   })
+   YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
+   RETURN
+   index,
+   gds.util.asNode(sourceNode).name AS sourceNodeName,
+   gds.util.asNode(targetNode).name AS targetNodeName,
+   totalCost,
+   [nodeId IN nodeIds | gds.util.asNode(nodeId).name] AS nodeNames,
+   costs,
+   nodes(path) as path
+   ORDER BY index
+
+Result:
+
+{
+  "identity": 6,
+  "labels": [
+    "Loc"
+  ],
+  "properties": {
+"name": "A"
+  }
+}
+{
+  "identity": 7,
+  "labels": [
+    "Loc"
+  ],
+  "properties": {
+"name": "B"
+  }
+}
+{
+  "identity": 9,
+  "labels": [
+    "Loc"
+  ],
+  "properties": {
+"name": "D"
+  }
+}
+{
+  "identity": 10,
+  "labels": [
+    "Loc"
+  ],
+  "properties": {
+"name": "E"
+  }
+}
+{
+  "identity": 11,
+  "labels": [
+    "Loc"
+  ],
+  "properties": {
+"name": "F"
+  }
+}
+
+
+2) MATCH p = shortestPath((A)-[:ROAD*]->(F)) WHERE A.name = 'A' and F.name = 'F' WITH length(p) > 1 return p;
+
+Result:
+
+{
+  "start": {
+"identity": 6,
+"labels": [
+      "Loc"
+    ],
+"properties": {
+"name": "A"
+    }
+  },
+  "end": {
+"identity": 11,
+"labels": [
+      "Loc"
+    ],
+"properties": {
+"name": "F"
+    }
+  },
+  "segments": [
+    {
+      "start": {
+"identity": 6,
+"labels": [
+          "Loc"
+        ],
+"properties": {
+"name": "A"
+        }
+      },
+      "relationship": {
+"identity": 11,
+"start": 6,
+"end": 9,
+"type": "ROAD",
+"properties": {
+"cost": 100
+        }
+      },
+      "end": {
+"identity": 9,
+"labels": [
+          "Loc"
+        ],
+"properties": {
+"name": "D"
+        }
+      }
+    },
+    {
+      "start": {
+"identity": 9,
+"labels": [
+          "Loc"
+        ],
+"properties": {
+"name": "D"
+        }
+      },
+      "relationship": {
+"identity": 16,
+"start": 9,
+"end": 11,
+"type": "ROAD",
+"properties": {
+"cost": 80
+        }
+      },
+      "end": {
+"identity": 11,
+"labels": [
+          "Loc"
+        ],
+"properties": {
+"name": "F"
+        }
+      }
+    }
+  ],
+  "length": 2.0
+}
