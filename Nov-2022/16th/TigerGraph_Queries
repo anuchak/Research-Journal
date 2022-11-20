@@ -1,0 +1,60 @@
+1) Weighted Edges
+
+[
+  {
+    "ResultSet": [
+      {
+        "v_id": "B",
+        "v_type": "Node",
+        "attributes": {
+          "ResultSet.@dis": 8,
+          "ResultSet.@path": [
+            "D",
+            "B"
+          ]
+        }
+      },
+      {
+        "v_id": "A",
+        "v_type": "Node",
+        "attributes": {
+          "ResultSet.@dis": 0,
+          "ResultSet.@path": []
+        }
+      },
+      {
+        "v_id": "C",
+        "v_type": "Node",
+        "attributes": {
+          "ResultSet.@dis": 9,
+          "ResultSet.@path": [
+            "D",
+            "B",
+            "C"
+          ]
+        }
+      },
+      {
+        "v_id": "E",
+        "v_type": "Node",
+        "attributes": {
+          "ResultSet.@dis": 7,
+          "ResultSet.@path": [
+            "D",
+            "E"
+          ]
+        }
+      },
+      {
+        "v_id": "D",
+        "v_type": "Node",
+        "attributes": {
+          "ResultSet.@dis": 5,
+          "ResultSet.@path": [
+            "D"
+          ]
+        }
+      }
+    ]
+  }
+]
