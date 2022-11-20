@@ -22,16 +22,17 @@ and `wt_type` is missing. The output is same format.
 ## Edge and Weight
 
 Supports unweighted and weighted (all weight types).  
-Uses Bellman-Ford algorithm internally (they have mentioned that Dijkstra is not used because it cannot be parallelized).  
+Uses Bellman-Ford algorithm internally (From the docs: `Dijsktra’s algorithm is designed for serial computation and cannot work with GSQL’s parallel processing`).  
 _No_ facility to define it _on the fly_, the weight attribute has to be specified from a property of the edge.  
 
 ## Algorithms supported
 
-Bellman Ford (parallelized) and Bidirectional BFS (unweighted). The APSP is just calling SPSP for all vertices.
+Bellman Ford (parallelized) and Bidirectional BFS (unweighted). The APSP is just calling SPSP for all vertices.  
+If there are multiple short paths between same source and target, only 1 of them is being returned.
 
 ## Query type allowed (sssd, ssad, etc.)
 
-single source-all targets, all sources-all targets, arbitrary target nodes is not supported  
+single source-all targets, all sources-all targets, arbitrary node and edge is supported  
 
 ## Return type (`Path` or `Double`)
 
