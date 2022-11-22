@@ -12,9 +12,11 @@ There seem to be 2 formats being supported:
 relationshipProperties: 'cost'
 }
 )`  
-A Graph Projection is created first, with the type of source and destination nodes specified, and the type of vertex required.  
-The vertex property to be used is indicated. Essentially keeps a subset of the entire graph for using next.  
-The reason why this graph projection is created because the implementation is *homogeneous*, it cannot distinguish between different types of nodes and vertices.  
+A Graph Projection is created first, with the type of source and destination nodes specified, and the type of edge required.  
+In this example *Loc* is the node type, *ROAD* is the edge type, and the property *cost* of ROAD will be used to measure cost.  
+Essentially keeps a subset of the entire graph for using next.  
+This graph projection is created because the implementation is *homogeneous*, it cannot distinguish between different types of nodes and vertices.  
+If 2 edges with the same cost property existed it would have considered either of them when finding the shortest path.  
 
 `MATCH (source:Loc {name: 'A'}), (target:Loc {name: 'F'})  
 CALL gds.shortestPath.dijkstra.stream('myGraph2', {  
@@ -33,8 +35,8 @@ costs,
 nodes(path) as path  
 ORDER BY index`  
 Using CALL the function is invoked and using YIELD which variables are required is specified.  
-Multiple variables are returned and only the required ones can be filtered. Also returns the `Path` variable. In this format there is no  
-explicitly bound variable. The total cost is of type `float`.   
+Multiple variables are returned and only the required ones can be filtered. Also returns the `Path` variable. In this format there is no one single 
+explicitly bound variable and instead multiple variables. The total cost is of type `float`.   
 
 2) Bound variable syntax (shortestPath call)
 
@@ -44,7 +46,7 @@ Doesn't consider the weight of the Edges, just finds the "shortest hop" meaning 
 
 ## Edge and Weight
 
-For case 2), the edge is to be specified in the Match pattern (undirected or directed can be indicated there). This case doesn't support +ve or -ve edge weights.  
+For case 2), the edge is to be specified in the Match pattern (undirected or directed can be indicated there). This case doesn't consider +ve or -ve edge weights.  
 It just considers the least no. of edges required to get from source and destination.  
 For case 1), `relationshipWeightProperty` is used to specify the property as weight of path. There is _no_ facility to _define it on the fly_.  
 +ve Edge weight is supported for the following implementations:
