@@ -24,15 +24,19 @@ The Path data type is required and will be composed of alternate node and edge I
 
 Initial implementation will be based only on _single source_ and _single target_.  
 
-1) Create the `Path` data type
+1) Hack a Plan for shortest path in the Planning stage  
+
+For the planning stage of shortest path, need to do some changes before proper planning can be done.  
+
+2) Create the `Path` data type
 
 As discussed above, create with the same template
 
-2) Implement the basic shortest path operator:
+3) Implement the basic shortest path operator:
 
 `shortestPath(ValueVector<nodeID_t> src, ValueVector<nodeID_t> dst, table_ID relLabel, rel_property_ID weightProperty)`  
 Here the `src` and `dst` will contain just 1 node ID. The storage API will be used to read from the tables.  
 
-3) Concept proof for large scale datasets:
+4) Concept proof for large scale datasets:
 
 After we have the "baseline", we will keep testing for larger and larger datasets to see how performant it is and decide the next step forward.
