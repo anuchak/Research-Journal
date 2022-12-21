@@ -8,11 +8,14 @@ The results of each query have been arranged as follows:
 For the Neo4j queries, total time taken is specified after the _completed after_ part.  
 Two executions with the highest and lowest time taken.  
 
+Shortest Path format:
+Dest Node | <Rel ID> | Next Node | <Rel ID> | ... | Source Node
+
 ## 2-hop query
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256530 RETURN a;`  
 
-510 <240345> 1701 <210035> 0
+Shortest Path: 510 <240345> 1701 <210035> 0
 
 Time: 0.71ms (compiling), 2.25ms (executing)  
 Time: 0.71ms (compiling), 1.13ms (executing)
@@ -26,7 +29,7 @@ Started streaming 1 records after 2 ms and completed after 12 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256668 RETURN a;`  
 
-4393 <240346> 1701 <210035> 0
+Shortest Path: 4393 <240346> 1701 <210035> 0
 
 Time: 0.37ms (compiling), 1.17ms (executing)
 Time: 0.37ms (compiling), 1.11ms (executing)
@@ -40,7 +43,7 @@ Started streaming 1 records after 1 ms and completed after 8 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256816 RETURN a;`  
 
-8973 <240347> 1701 <210035> 0
+Shortest Path: 8973 <240347> 1701 <210035> 0
 
 Time: 0.76ms (compiling), 1.69ms (executing)
 Time: 0.77ms (compiling), 1.17ms (executing)
@@ -56,7 +59,7 @@ Started streaming 1 records after 1 ms and completed after 9 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023257255 RETURN a;`  
 
-8382 <373978> 8973 <240347> 1701 <210035> 0
+Shortest Path: 8382 <373978> 8973 <240347> 1701 <210035> 0
 
 Time: 0.82ms (compiling), 15.54ms (executing)
 Time: 0.72ms (compiling), 1.68ms (executing)
@@ -72,7 +75,7 @@ Started streaming 1 records after 1 ms and completed after 8 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 1129 and b.ID = 2199023257255 RETURN a;`  
 
-8382 <373978> 8973 <240347> 1701 <244186> 1907 <210040> 1
+Shortest Path: 8382 <373978> 8973 <240347> 1701 <244186> 1907 <210040> 1
 
 Time: 0.71ms (compiling), 14.67ms (executing)
 Time: 0.55ms (compiling), 6.77ms (executing)
@@ -88,7 +91,7 @@ Started streaming 1 records after 1 ms and completed after 8 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256077 RETURN a;`  
 
-5712 <385223> 9587 <351914> 7803 <242638> 1809 <240317> 1701 <210035> 0
+Shortest Path: 5712 <385223> 9587 <351914> 7803 <242638> 1809 <240317> 1701 <210035> 0
 
 Time: 0.72ms (compiling), 22.22ms (executing)
 Time: 0.69ms (compiling), 18.09ms (executing)
@@ -102,7 +105,7 @@ Started streaming 1 records after 1 ms and completed after 7 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 1129 and b.ID = 2199023257716 RETURN a;`  
 
-2120 <234702> 1310 <343227> 7298 <240315> 1701 <244186> 1907 <210040> 1
+Shortest Path: 2120 <234702> 1310 <343227> 7298 <240315> 1701 <244186> 1907 <210040> 1
 
 Time: 0.72ms (compiling), 21.11ms (executing)
 Time: 0.73ms (compiling), 17.43ms (executing)
@@ -116,7 +119,7 @@ Started streaming 1 records after 1 ms and completed after 7 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 1129 and b.ID = 2199023257939 RETURN a;`  
 
-9403 <319998> 6071 <384008> 9505 <387059> 9686 <244184> 1907 <210040> 1
+Shortest Path: 9403 <319998> 6071 <384008> 9505 <387059> 9686 <244184> 1907 <210040> 1
 
 Time: 0.73ms (compiling), 20.47ms (executing)
 Time: 0.84ms (compiling), 16.67ms (executing)
