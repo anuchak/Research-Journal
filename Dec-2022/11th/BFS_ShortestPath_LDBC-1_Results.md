@@ -12,9 +12,10 @@ Two executions with the highest and lowest time taken.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256530 RETURN a;`  
 
-510->1701->0  
-Time: 0.71ms (compiling), 73.31ms (executing)  
-Time: 0.89ms (compiling), 67.10ms (executing)  
+510 <240345> 1701 <210035> 0
+
+Time: 0.71ms (compiling), 2.25ms (executing)  
+Time: 0.71ms (compiling), 1.13ms (executing)
 
 ### Neo4j
 
@@ -25,9 +26,10 @@ Started streaming 1 records after 2 ms and completed after 12 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256668 RETURN a;`  
 
-4393->1701->0  
-Time: 0.70ms (compiling), 140.01ms (executing)  
-Time: 0.70ms (compiling), 66.74ms (executing)  
+4393 <240346> 1701 <210035> 0
+
+Time: 0.37ms (compiling), 1.17ms (executing)
+Time: 0.37ms (compiling), 1.11ms (executing)
 
 ### Neo4j
 
@@ -38,9 +40,10 @@ Started streaming 1 records after 1 ms and completed after 8 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256816 RETURN a;`  
 
-8973->1701->0  
-Time: 0.68ms (compiling), 137.45ms (executing)  
-Time: 0.67ms (compiling), 66.16ms (executing)  
+8973 <240347> 1701 <210035> 0
+
+Time: 0.76ms (compiling), 1.69ms (executing)
+Time: 0.77ms (compiling), 1.17ms (executing)
 
 ### Neo4j
 
@@ -53,9 +56,10 @@ Started streaming 1 records after 1 ms and completed after 9 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023257255 RETURN a;`  
 
-8382->8973->1701->0  
-Time: 0.75ms (compiling), 73.77ms (executing)  
-Time: 0.71ms (compiling), 66.87ms (executing)  
+8382 <373978> 8973 <240347> 1701 <210035> 0
+
+Time: 0.82ms (compiling), 15.54ms (executing)
+Time: 0.72ms (compiling), 1.68ms (executing)
 
 ### Neo4j
 
@@ -68,9 +72,10 @@ Started streaming 1 records after 1 ms and completed after 8 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 1129 and b.ID = 2199023257255 RETURN a;`  
 
-8382->8973->1701->1907->1  
-Time: 0.74ms (compiling), 79.11ms (executing)  
-Time: 0.76ms (compiling), 63.67ms (executing)  
+8382 <373978> 8973 <240347> 1701 <244186> 1907 <210040> 1
+
+Time: 0.71ms (compiling), 14.67ms (executing)
+Time: 0.55ms (compiling), 6.77ms (executing)
 
 ### Neo4j
 
@@ -83,9 +88,10 @@ Started streaming 1 records after 1 ms and completed after 8 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 933 and b.ID = 2199023256077 RETURN a;`  
 
-5712->9587->7803->1809->1701->0  
-Time: 0.74ms (compiling), 120.23ms (executing)  
-Time: 0.74ms (compiling), 54.98ms (executing)  
+5712 <385223> 9587 <351914> 7803 <242638> 1809 <240317> 1701 <210035> 0
+
+Time: 0.72ms (compiling), 22.22ms (executing)
+Time: 0.69ms (compiling), 18.09ms (executing)
 
 ### Neo4j
 
@@ -96,9 +102,10 @@ Started streaming 1 records after 1 ms and completed after 7 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 1129 and b.ID = 2199023257716 RETURN a;`  
 
-2120->1310->7298->1701->1907->1  
-Time: 0.72ms (compiling), 65.15ms (executing)  
-Time: 0.71ms (compiling), 59.27ms (executing)  
+2120 <234702> 1310 <343227> 7298 <240315> 1701 <244186> 1907 <210040> 1
+
+Time: 0.72ms (compiling), 21.11ms (executing)
+Time: 0.73ms (compiling), 17.43ms (executing)
 
 ### Neo4j
 
@@ -109,9 +116,10 @@ Started streaming 1 records after 1 ms and completed after 7 ms.
 
 `MATCH (a:Person)-[r:KNOWS*1..30]->(b:Person) WHERE a.ID = 1129 and b.ID = 2199023257939 RETURN a;`  
 
-9403->6071->9505->9686->1907->1  
-Time: 0.33ms (compiling), 67.27ms (executing)  
-Time: 0.70ms (compiling), 56.52ms (executing)  
+9403 <319998> 6071 <384008> 9505 <387059> 9686 <244184> 1907 <210040> 1
+
+Time: 0.73ms (compiling), 20.47ms (executing)
+Time: 0.84ms (compiling), 16.67ms (executing)
 
 ### Neo4j
 
