@@ -9,7 +9,7 @@ For the Neo4j queries, total time taken is specified after the _completed after_
 Two executions with the highest and lowest time taken.  
 
 Shortest Path format:
-Dest Node | <Rel ID> | Next Node | <Rel ID> | ... | Source Node
+Dest Node | `Rel ID` | Next Node | `Rel ID` | ... | Source Node
 
 ## 2-hop query
 
